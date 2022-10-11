@@ -55,10 +55,6 @@ setuid 65535
 stacksize 6291456 
 flush
 auth none
-#    users $(awk -F "/" 'BEGIN{ORS="";} {print $1 ":CL:" $2 " "}' ${WORKDATA})
-$(awk -F "/" '{print "auth none\n" \
-"proxy -6 -n -a -p" $4 " -i" $3 " -e"$5"\n" \
-"flush\n"}' ${WORKDATA})
 EOF
 }
 

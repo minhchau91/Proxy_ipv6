@@ -1,4 +1,5 @@
 #!/bin/sh
+# note: install wget - install iptables
 random() {
 	tr </dev/urandom -dc A-Za-z0-9 | head -c5
 	echo

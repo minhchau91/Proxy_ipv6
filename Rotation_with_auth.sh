@@ -28,7 +28,7 @@ stacksize 6291456
 flush
 auth strong
 users $(awk -F "/" 'BEGIN{ORS="";} {print $1 ":CL:" $2 " "}' ${WORKDATA})
-$(awk -F "/" '{print "auth none\n" \
+$(awk -F "/" '{print "auth strong\n" \
 "allow " $1 "\n" \
 "proxy -6 -n -a -p" $5 " -i" $4 " -e"$6"\n" \
 "flush\n"}' ${WORKDATA})

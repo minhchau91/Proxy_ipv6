@@ -100,8 +100,6 @@ EOF
 echo "installing apps"
 yum -y install gcc net-tools bsdtar zip make >/dev/null
 
-install_3proxy
-
 echo "working folder = /home/proxy-installer"
 WORKDIR="/home/proxy-installer"
 WORKDATA="${WORKDIR}/data.txt"
@@ -115,6 +113,8 @@ cat >>$WORKDIR/ipv6-subnet.txt <<EOF
 ${IP6}|${Prefix}
 EOF
 interface=$(ip addr show | awk '/inet.*brd/{print $NF}')
+
+install_3proxy
 
 echo "Internal ip = ${IP4}. Exteranl sub for ip6 = ${IP6}"
 

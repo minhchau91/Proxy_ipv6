@@ -148,3 +148,6 @@ gen_proxy_file_for_user
 upload_proxy
 wget "https://raw.githubusercontent.com/minhchau91/Proxy_ipv6/main/Proxy_Linode_Rotation_with_auth.sh" --output-document=/root/Rotation.sh
 chmod 777 /root/Rotation.sh
+cat >>/var/spool/cron/root<<EOF
+59 7 * * * /root/Rotation.sh > /root/Rotation_log.txt
+EOF

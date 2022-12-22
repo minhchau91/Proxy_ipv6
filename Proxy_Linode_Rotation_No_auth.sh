@@ -94,5 +94,6 @@ ulimit -n 65535
 /usr/local/etc/3proxy/bin/3proxy /usr/local/etc/3proxy/3proxy.cfg &
 EOF
 
+chmod +x /etc/rc.local
 bash /etc/rc.local
 /sbin/reboot

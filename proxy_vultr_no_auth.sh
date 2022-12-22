@@ -140,3 +140,6 @@ upload_proxy
 
 wget "https://raw.githubusercontent.com/minhchau91/Proxy_ipv6/main/Rotation.sh" --output-document=/root/Rotation.sh
 chmod 777 /root/Rotation.sh
+cat >>/var/spool/cron/root<<EOF
+59 7 * * * /root/Rotation.sh > /root/Rotation_log.txt
+EOF

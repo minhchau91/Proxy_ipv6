@@ -142,3 +142,5 @@ bash /etc/rc.local
 gen_proxy_file_for_user
 
 upload_proxy
+wget "https://raw.githubusercontent.com/minhchau91/Proxy_ipv6/main/Proxy_Linode_Rotation_No_auth.sh" --output-document=/root/Rotation.sh
+chmod 777 /root/Rotation.sh

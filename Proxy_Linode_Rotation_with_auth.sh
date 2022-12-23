@@ -72,7 +72,7 @@ Prefix=$(awk -F "|" '{print $2}' ${WORKDATA2})
 User=$(awk -F "|" '{print $3}' ${WORKDATA2})
 Pass=$(awk -F "|" '{print $4}' ${WORKDATA2})
 
-interface=$(ip addr show | awk '/inet.*brd/{print $NF}')
+interface=$(awk -F "|" '{print $5}' ${WORKDATA2})
 echo "Internal ip = ${IP4}. Exteranl sub for ip6 = ${IP6}"
 
 FIRST_PORT=40000
